@@ -503,6 +503,18 @@
             background: #f0f4ff;
             border-radius: 8px;
         }
+        
+        .image-placeholder {
+            width: 100%;
+            height: 200px;
+            background: #ddd;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+            font-weight: bold;
+        }
     </style>
 </head>
 <body>
@@ -709,657 +721,521 @@
             </div>
 
             <div class="dialogue">
-                <img id="playerImagePhase8a" src="" class="dialogue-image" alt="Você">
-                <div class="dialogue-text">
-                    <strong>Você:</strong> "Uma empresa copiou nosso produto, mas estão nos processando por plágio."
-                </div>
-            </div>
+                <img id="
+// DADOS DO JOGO - CORRIGIDOS
+const characters = [
+    { name: 'Personagem 1', image: 'https://via.placeholder.com/300x400/667eea/ffffff?text=Personagem+1' },
+    { name: 'Personagem 2', image: 'https://via.placeholder.com/300x400/764ba2/ffffff?text=Personagem+2' },
+    { name: 'Personagem 3', image: 'https://via.placeholder.com/300x400/28a745/ffffff?text=Personagem+3' },
+    { name: 'Personagem 4', image: 'https://via.placeholder.com/300x400/d32f2f/ffffff?text=Personagem+4' },
+    { name: 'Personagem 5', image: 'https://via.placeholder.com/300x400/ff9800/ffffff?text=Personagem+5' },
+    { name: 'Personagem 6', image: 'https://via.placeholder.com/300x400/009688/ffffff?text=Personagem+6' }
+];
 
-            <div class="dialogue">
-                <img src="https://raw.githubusercontent.com/Araujotete/Raizes-2.0---mentores/main/Jessica%20Pearson.png" class="dialogue-image" alt="Jessica Pearson">
-                <div class="dialogue-text">
-                    <strong>Jessica Pearson:</strong> "Que delinquentes! Vamos ganhar essa causa. Me mande os documentos sobre sua empresa e seu produto."
-                </div>
-            </div>
+const mentors = [
+    {
+        name: 'Chris Gardner',
+        image: 'https://raw.githubusercontent.com/Araujotete/Raizes-2.0---mentores/main/Chris%20Gardner.png',
+        text: 'Eu sou Chris Gardner. Passei por tempos muito difíceis — cheguei a viver nas ruas com meu filho, lutando todos os dias para dar a ele uma vida melhor. Mesmo com tantas portas se fechando, nunca desisti dos meus sonhos. Com muita persistência e fé, conquistei meu espaço no mercado financeiro e me tornei um empreendedor de sucesso.'
+    },
+    {
+        name: 'Madam C.J. Walker',
+        image: 'https://raw.githubusercontent.com/Araujotete/Raizes-2.0---mentores/main/Madam%20C.J.%20Walker.png',
+        text: 'Comecei com muito pouco — lavando roupas e sonhando com um futuro melhor. Criei meus próprios produtos para cuidar dos cabelos de mulheres negras e, com coragem e trabalho, construí um império. Tornei-me a primeira mulher negra milionária dos Estados Unidos e usei minha voz para abrir caminhos para outras.'
+    },
+    {
+        name: 'Daymond John',
+        image: 'https://raw.githubusercontent.com/Araujotete/Raizes-2.0---mentores/main/Daymond%20John.png',
+        text: 'Comecei costurando bonés na cozinha da minha mãe, em Queens. A FUBU nasceu do desejo de criar algo feito por nós e para nós. Com determinação e criatividade, transformei uma pequena ideia em uma marca mundial e hoje invisto em quem também acredita em seus sonhos.'
+    },
+    {
+        name: 'Richelieu Dennis',
+        image: 'https://raw.githubusercontent.com/Araujotete/Raizes-2.0---mentores/main/Richelieu%20Dennis.png',
+        text: 'Herdei da minha avó a sabedoria e as receitas africanas de cuidado com a pele. Com isso, fundei a SheaMoisture, unindo tradição e propósito. Meu objetivo sempre foi mais que vender produtos — é fortalecer comunidades e criar oportunidades para quem, como eu, veio de baixo.'
+    },
+    {
+        name: 'Adriana Barbosa',
+        image: 'https://raw.githubusercontent.com/Araujotete/Raizes-2.0---mentores/main/Adriana%20Barbosa.png',
+        text: 'Eu queria mostrar a força e o talento do povo negro no Brasil. Assim nasceu a Feira Preta, um espaço de resistência e celebração. De um pequeno evento, cresceu para se tornar o maior movimento de empreendedorismo negro da América Latina — e eu sigo acreditando na potência da nossa cultura.'
+    }
+];
 
-            <div class="dialogue">
-                <img id="playerImagePhase8b" src="" class="dialogue-image" alt="Você">
-                <div class="dialogue-text">
-                    <strong>Você:</strong> "Ok. Enviarei até o fim do dia."
-                </div>
-            </div>
+const businessTypes = [
+    { name: 'Beleza', emoji: '💄' },
+    { name: 'Tecnologia', emoji: '💻' },
+    { name: 'Arte', emoji: '🎨' },
+    { name: 'Educação', emoji: '📚' },
+    { name: 'Fotografia', emoji: '📷' },
+    { name: 'Dança', emoji: '💃' },
+    { name: 'Música', emoji: '🎵' },
+    { name: 'Mídia', emoji: '📺' },
+    { name: 'Escrita', emoji: '✍️' },
+    { name: 'Finanças', emoji: '💰' }
+];
 
-            <p style="color: #28a745; font-weight: bold; margin: 20px 0; text-align: center;">✓ Parabéns! Você ganhou a ação judicial!</p>
-            <p style="color: #666; margin: 15px 0;">A empresa foi condenada a indenizá-lo em R$100 mil. Após Jessica receber sua comissão de 10%, restam R$90 mil para ser dividido entre os sócios.</p>
+const channels = [
+    'Jornal', 'Instagram', 'TikTok', 'Boca-a-boca', 'YouTube',
+    'Site na Web', 'WhatsApp', 'Panfletos', 'Grupos de Vendas'
+];
 
-            <div class="buttons">
-                <button class="btn-primary" onclick="goToPhase(9)">Continuar para Fase 9</button>
+const employees = [
+    { name: 'Vendedor', desc: 'Especialista em vendas' },
+    { name: 'Marketing', desc: 'Criativo, conhecedor de tendências' },
+    { name: 'Design', desc: 'Designer criativo' },
+    { name: 'Assistente', desc: 'Organizado e eficiente' },
+    { name: 'Agente Publicitário', desc: 'Conectado, networking' },
+    { name: 'Escritor', desc: 'Produtor de conteúdo' }
+];
+
+const growthOptions = [
+    'Fazer mais publicações nas redes sociais',
+    'Dar descontos para chamar mais clientes',
+    'Expandir equipe - contratar mais funcionários',
+    'Abrir filiais',
+    'Criar mais produtos'
+];
+
+const ayoDepoisImage = 'https://raw.githubusercontent.com/Araujotete/Raizes2/main/Ay%C3%B4.png';
+const malikDepoisImage = 'https://raw.githubusercontent.com/Araujotete/Raizes2/main/Malik.png';
+
+let playerData = {
+    name: '',
+    character: '',
+    characterImage: '',
+    score: 0,
+    mentorsVisited: 0,
+    businesses: [],
+    businessName: '',
+    businessDesc: '',
+    channels: [],
+    employee: '',
+    clientPitch: '',
+    growth: [],
+    partnership: '',
+    ethics: '',
+    isHonest: true
+};
+
+let currentPhase = 0;
+
+function initGame() {
+    renderCharacters();
+    renderMentors();
+    renderBusinessTypes();
+    renderChannels();
+    renderEmployees();
+    renderGrowthOptions();
+    renderPartnershipOptions();
+    renderEthicsOptions();
+    renderFinalOptions();
+}
+
+function renderCharacters() {
+    const grid = document.getElementById('characterGrid');
+    grid.innerHTML = characters.map((char) => 
+        `<div class="character-option">
+            <img src="${char.image}" alt="${char.name}" onclick="openImageModal('${char.name}', '${char.image}')">
+            <div class="character-name">${char.name}</div>
+        </div>`
+    ).join('');
+}
+
+function openImageModal(name, image) {
+    document.getElementById('characterNameModal').textContent = name;
+    document.getElementById('characterImageModal').src = image;
+    document.getElementById('modalViewImage').classList.add('active');
+    playerData.tempCharacter = name;
+    playerData.tempImage = image;
+}
+
+function closeImageModal() {
+    document.getElementById('modalViewImage').classList.remove('active');
+}
+
+function selectCharacterFromModal() {
+    if (!playerData.tempCharacter) {
+        alert('Por favor, selecione um personagem primeiro!');
+        return;
+    }
+    playerData.character = playerData.tempCharacter;
+    playerData.characterImage = playerData.tempImage;
+    closeImageModal();
+    
+    // Destacar o personagem selecionado
+    document.querySelectorAll('.character-option').forEach(option => {
+        option.classList.remove('selected');
+    });
+    
+    alert('Personagem ' + playerData.character + ' selecionado!');
+}
+
+function startGame() {
+    const name = document.getElementById('playerName').value.trim();
+    if (!name) {
+        alert('Por favor, digite seu nome!');
+        return;
+    }
+    if (!playerData.character) {
+        alert('Por favor, escolha um personagem!');
+        return;
+    }
+    playerData.name = name;
+    playerData.score = 100;
+    showScreen('screen-abertura');
+}
+
+function renderMentors() {
+    const container = document.getElementById('mentorsContainer');
+    container.innerHTML = mentors.map((mentor, idx) => 
+        `<div class="mentor-card" onclick="visitMentor(${idx}, this)">
+            <img src="${mentor.image}" alt="${mentor.name}" class="mentor-image" onerror="this.src='https://via.placeholder.com/120x120/667eea/ffffff?text=Imagem'">
+            <div class="mentor-content">
+                <strong>${mentor.name}</strong>
+                <p>${mentor.text}</p>
+                <small style="color: #999;">Clique para ouvir +4 pontos</small>
             </div>
+        </div>`
+    ).join('');
+}
+
+function visitMentor(idx, element) {
+    if (element.classList.contains('visited')) return;
+    element.classList.add('visited');
+    playerData.mentorsVisited++;
+    playerData.score += 4;
+    document.getElementById('mentorCount').textContent = playerData.mentorsVisited;
+    document.getElementById('mentorsSelected').style.display = 'block';
+    
+    if (playerData.mentorsVisited >= 3) {
+        document.getElementById('btnPhase2').disabled = false;
+    }
+}
+
+function renderBusinessTypes() {
+    const container = document.getElementById('businessTypes');
+    container.innerHTML = businessTypes.map((type, idx) => 
+        `<div class="checkbox-item">
+            <input type="checkbox" data-business="${type.name}" onchange="updateBusinesses()"> 
+            <span class="business-emoji">${type.emoji}</span> ${type.name}
+        </div>`
+    ).join('');
+}
+
+function updateBusinesses() {
+    const checks = document.querySelectorAll('#businessTypes input:checked');
+    if (checks.length > 3) {
+        checks[checks.length - 1].checked = false;
+        alert('Você só pode escolher no máximo 3 ramos de negócio!');
+        return;
+    }
+    playerData.businesses = Array.from(checks).map(c => c.getAttribute('data-business'));
+}
+
+function renderChannels() {
+    const container = document.getElementById('channels');
+    container.innerHTML = channels.map(channel => 
+        `<div class="checkbox-item">
+            <input type="checkbox" value="${channel}" onchange="updateChannels()"> ${channel}
+        </div>`
+    ).join('');
+}
+
+function updateChannels() {
+    const checks = document.querySelectorAll('#channels input:checked');
+    if (checks.length > 3) {
+        checks[checks.length - 1].checked = false;
+        alert('Você só pode escolher no máximo 3 canais de divulgação!');
+        return;
+    }
+    playerData.channels = Array.from(checks).map(c => c.value);
+}
+
+function renderEmployees() {
+    const container = document.getElementById('employeeOptions');
+    container.innerHTML = employees.map(emp => 
+        `<button class="option-btn" onclick="selectEmployee('${emp.name}', this)">
+            <strong>${emp.name}</strong><br>
+            <small>${emp.desc}</small>
+        </button>`
+    ).join('');
+}
+
+function selectEmployee(emp, element) {
+    document.querySelectorAll('#employeeOptions .option-btn').forEach(e => e.classList.remove('selected'));
+    element.classList.add('selected');
+    playerData.employee = emp;
+}
+
+function renderGrowthOptions() {
+    const container = document.getElementById('growthOptions');
+    container.innerHTML = growthOptions.map(option => 
+        `<div class="checkbox-item">
+            <input type="checkbox" value="${option}" onchange="updateGrowth()"> ${option}
+        </div>`
+    ).join('');
+}
+
+function updateGrowth() {
+    const checks = document.querySelectorAll('#growthOptions input:checked');
+    if (checks.length > 2) {
+        checks[checks.length - 1].checked = false;
+        alert('Você só pode escolher no máximo 2 estratégias de crescimento!');
+        return;
+    }
+    playerData.growth = Array.from(checks).map(c => c.value);
+}
+
+function renderPartnershipOptions() {
+    const container = document.getElementById('partnershipOptions');
+    container.innerHTML = [
+        'Teste Prático - Cada um fica uma semana como gerente',
+        'Divisão no Mercado de Ações - 30% cada, 10% para investidores',
+        'Divisão com Caridade - 30% cada, 10% para caridade'
+    ].map(opt => 
+        `<button class="option-btn" onclick="selectPartnership('${opt}', this)">${opt}</button>`
+    ).join('');
+}
+
+function selectPartnership(opt, element) {
+    document.querySelectorAll('#partnershipOptions .option-btn').forEach(e => e.classList.remove('selected'));
+    element.classList.add('selected');
+    playerData.partnership = opt;
+}
+
+function renderEthicsOptions() {
+    const container = document.getElementById('ethicsOptions');
+    container.innerHTML = [
+        { text: 'R$30 mil para cada', value: 'honest' },
+        { text: 'R$60 mil no negócio, R$30 mil divididos', value: 'strategic' },
+        { text: 'Dizer que receberam R$60 mil, ficar com R$50 mil', value: 'dishonest' }
+    ].map(opt => 
+        `<button class="option-btn" onclick="selectEthics('${opt.value}', this)">${opt.text}</button>`
+    ).join('');
+}
+
+function selectEthics(opt, element) {
+    document.querySelectorAll('#ethicsOptions .option-btn').forEach(e => e.classList.remove('selected'));
+    element.classList.add('selected');
+    playerData.ethics = opt;
+    
+    if (opt === 'dishonest') {
+        playerData.isHonest = false;
+        playerData.score -= 80;
+    } else {
+        playerData.isHonest = true;
+        playerData.score += 20;
+    }
+}
+
+function renderFinalOptions() {
+    const optionsHonest = document.getElementById('finalOptions');
+    const optionsDesonesto = document.getElementById('finalOptionsDesonesto');
+    
+    const honestOpts = [
+        'Foi difícil, mas consegui',
+        'Os fins justificam os meios',
+        'Foi muito fácil'
+    ];
+
+    const dishonestOpts = [
+        'Foi difícil, mas consegui',
+        'Os fins justificam os meios',
+        'Foi muito fácil',
+        'Eu vou voltar, e quando isso acontecer, Malik e Ayô pagarão'
+    ];
+
+    optionsHonest.innerHTML = honestOpts.map(opt => 
+        `<button class="option-btn" onclick="endGame('${opt}', true)">${opt}</button>`
+    ).join('');
+
+    optionsDesonesto.innerHTML = dishonestOpts.map(opt => 
+        `<button class="option-btn" onclick="endGame('${opt}', false)">${opt}</button>`
+    ).join('');
+}
+
+function renderFinalCharacters() {
+    document.getElementById('finalCharactersHonesto').innerHTML = `
+        <img src="${ayoDepoisImage}" class="final-character-img ayo-malik" alt="Ayô" onerror="this.style.display='none'">
+        <img src="${playerData.characterImage}" class="final-character-img ayo-malik" alt="${playerData.character}" onerror="this.style.display='none'">
+        <img src="${malikDepoisImage}" class="final-character-img ayo-malik" alt="Malik" onerror="this.style.display='none'">
+    `;
+
+    document.getElementById('finalCharactersDishonest').innerHTML = `
+        <div style="display: flex; gap: 20px; align-items: flex-start;">
+            <img src="${ayoDepoisImage}" class="final-character-img ayo-malik" alt="Ayô" onerror="this.style.display='none'">
+            <img src="${malikDepoisImage}" class="final-character-img ayo-malik" alt="Malik" onerror="this.style.display='none'">
         </div>
-
-        <!-- FASE 9 -->
-        <div id="screen-fase9" class="screen">
-            <div class="phase-counter">Fase 9 de 10</div>
-            <div class="progress-bar"><div class="progress-fill" style="width: 90%;"></div></div>
-            <div class="phase-info"><strong>Fase 9: O Grande Teste Ético</strong></div>
-            <p style="color: #666; margin: 15px 0;">Sua empresa ganhou a causa na justiça e recebeu R$100 mil em indenização. Após pagar os 10% da advogada Jessica, restam R$90 mil. O dinheiro está sobre sua responsabilidade e seus sócios Ayô e Malik ainda não sabem o valor exato recebido.</p>
-            <p style="color: #d32f2f; font-weight: bold; margin: 15px 0;">O que você fará?</p>
-            <div class="options-grid" id="ethicsOptions"></div>
-            <div class="buttons">
-                <button class="btn-primary" onclick="validatePhase9()">Continuar para Fase 10</button>
-            </div>
-        </div>
-
-        <!-- FASE 10 - FINAL HONESTO -->
-        <div id="screen-fase10-honesto" class="screen">
-            <div class="phase-counter">Fase 10 de 10</div>
-            <div class="progress-bar"><div class="progress-fill" style="width: 100%;"></div></div>
-            <div class="phase-info"><strong>Fase 10: Julgamento Final - Caminho da Honestidade</strong></div>
-
-            <div class="final-message">
-                <h2>Parabéns!</h2>
-                <p style="font-size: 1.1em; margin: 20px 0;">Você completou sua jornada empreendedora com sucesso, ética e integridade!</p>
-            </div>
-
-            <p style="color: #666; margin: 15px 0; text-align: center;">Ayô, Malik e você construíram um empreendimento seguro juntos. Os três aparecem lado a lado, celebrando o sucesso compartilhado.</p>
-
-            <div class="final-characters" id="finalCharactersHonesto"></div>
-
-            <div class="input-group">
-                <label style="color: #333; font-weight: bold;">O que você diria da sua jornada empreendedora?</label>
-                <div class="options-grid" id="finalOptions"></div>
-            </div>
-
-            <div class="score-display">
-                <h2>Sua Pontuação Final</h2>
-                <p id="finalScore">950 pontos</p>
-            </div>
-
-            <div class="buttons">
-                <button class="btn-primary" onclick="location.reload()">Jogar Novamente</button>
-            </div>
-        </div>
-
-        <!-- FASE 10 - FINAL DESONESTO -->
-         <div id="screen-fase10-desonesto" class="screen">
-            <div class="phase-counter">Fase 10 de 10</div>
-            <div class="progress-bar">
-                <div class="progress-fill" style="width: 100%;"></div>
-            </div>
-            <div class="phase-info">
-                <strong>Fase 10: Julgamento Final - Consequências da Desonestidade</strong>
-            </div>
-            
-        <!-- VÍDEO DO CARRO DE POLÍCIA -->
-            <div style="text-align: center; margin: 20px 0;">
-                <iframe 
-                    width="100%" 
-                    height="315" 
-                    src="https://www.youtube.com/embed/j-D0ZJj1b8c" 
-                    style="border-radius: 12px; max-width: 560px;"
-                    frameborder="0" 
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                    allowfullscreen>
-                </iframe>
-            </div>
-
-            <div class="final-message" style="background: linear-gradient(135deg, #d32f2f 0%, #b71c1c 100%);">
-                <h2>⚠️ Você Foi Preso!</h2>
-                <p style="font-size: 1.1em; margin: 20px 0;">Você tentou enganar seus sócios sobre a indenização.</p>
-            </div>
-
-            <p style="color: #d32f2f; margin: 15px 0; font-weight: bold;">
-                Ayô descobriu a verdade e denunciou você para a polícia. Seu negócio desabou.
-            </p>
-
-            <p style="color: #666; margin: 15px 0;">
-                Ayô e Malik aparecem em primeiro plano (maiores), profissionais e bem-sucedidos. Abaixo deles, bem menor, você aparece - refletindo sua queda e exclusão do sucesso que poderiam ter compartilhado.
-            </p>
-
-            <!-- IMAGENS FINAIS - DESONESTO -->
-            <div class="final-characters dishonest" id="finalCharactersDishonest">
-                <!-- Será preenchido pelo JavaScript -->
-            </div>
-
-            <div class="input-group">
-                <label style="color: #333; font-weight: bold;">O que você diria da sua jornada?</label>
-                <div class="options-grid" id="finalOptionsDesonesto">
-                    <!-- Será preenchido pelo JavaScript -->
-                </div>
-            </div>
-
-            <div class="score-display" style="background: #d32f2f;">
-                <h2>Sua Pontuação Final</h2>
-                <p id="finalScoreDesonesto">250 pontos</p>
-            </div>
-
-            <div class="buttons">
-                <button class="btn-secondary" onclick="location.reload()">Jogar Novamente</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- MODAL PARA VISUALIZAR IMAGEM DO PERSONAGEM -->
-    <div id="modalViewImage" class="modal-view-image">
-        <div class="modal-image-content">
-            <span class="close-modal" onclick="closeImageModal()">&times;</span>
-            <h3 id="characterNameModal"></h3>
-            <img id="characterImageModal" src="" alt="Personagem">
-            <button class="btn-primary" onclick="selectCharacterFromModal()">Escolher este Personagem</button>
-        </div>
-    </div>
-
-    <script>
-        // DADOS DO JOGO
-        const characters = [
-            { name: 'Personagem 1', image: 'https://ibb.co/LszPNn3' },
-            { name: 'Personagem 2', image: 'https://ibb.co/3Y4DpGf5'},
-            { name: 'Personagem 3', image: 'https://ibb.co/6JtXfKvd'},
-            { name: 'Personagem 4', image: 'https://ibb.co/9mTNZRYB'},
-            { name: 'Personagem 5', image: 'https://ibb.co/cSK6Cm5f'},
-            { name: 'Personagem 6', image: 'https://ibb.co/4R0g3Pn9'},
-            
-        ];
-
-        const mentors = [
-            {
-                name: 'Chris Gardner',
-                image: 'https://raw.githubusercontent.com/Araujotete/Raizes-2.0---mentores/main/Chris%20Gardner.png',
-                text: 'Eu sou Chris Gardner. Passei por tempos muito difíceis — cheguei a viver nas ruas com meu filho, lutando todos os dias para dar a ele uma vida melhor. Mesmo com tantas portas se fechando, nunca desisti dos meus sonhos. Com muita persistência e fé, conquistei meu espaço no mercado financeiro e me tornei um empreendedor de sucesso.'
-            },
-            {
-                name: 'Madam C.J. Walker',
-                image: 'https://raw.githubusercontent.com/Araujotete/Raizes-2.0---mentores/main/Madam%20C.J.%20Walker.png',
-                text: 'Comecei com muito pouco — lavando roupas e sonhando com um futuro melhor. Criei meus próprios produtos para cuidar dos cabelos de mulheres negras e, com coragem e trabalho, construí um império. Tornei-me a primeira mulher negra milionária dos Estados Unidos e usei minha voz para abrir caminhos para outras.'
-            },
-            {
-                name: 'Daymond John',
-                image: 'https://raw.githubusercontent.com/Araujotete/Raizes-2.0---mentores/main/Daymond%20John.png',
-                text: 'Comecei costurando bonés na cozinha da minha mãe, em Queens. A FUBU nasceu do desejo de criar algo feito por nós e para nós. Com determinação e criatividade, transformei uma pequena ideia em uma marca mundial e hoje invisto em quem também acredita em seus sonhos.'
-            },
-            {
-                name: 'Richelieu Dennis',
-                image: 'https://raw.githubusercontent.com/Araujotete/Raizes-2.0---mentores/main/Richelieu%20Dennis.png',
-                text: 'Herdei da minha avó a sabedoria e as receitas africanas de cuidado com a pele. Com isso, fundei a SheaMoisture, unindo tradição e propósito. Meu objetivo sempre foi mais que vender produtos — é fortalecer comunidades e criar oportunidades para quem, como eu, veio de baixo.'
-            },
-            {
-                name: 'Adriana Barbosa',
-                image: 'https://raw.githubusercontent.com/Araujotete/Raizes-2.0---mentores/main/Adriana%20Barbosa.png',
-                text: 'Eu queria mostrar a força e o talento do povo negro no Brasil. Assim nasceu a Feira Preta, um espaço de resistência e celebração. De um pequeno evento, cresceu para se tornar o maior movimento de empreendedorismo negro da América Latina — e eu sigo acreditando na potência da nossa cultura.'
-            }
-        ];
-
-        const businessTypes = [
-            { name: 'Beleza', emoji: '💄' },
-            { name: 'Tecnologia', emoji: '💻' },
-            { name: 'Arte', emoji: '🎨' },
-            { name: 'Educação', emoji: '📚' },
-            { name: 'Fotografia', emoji: '📷' },
-            { name: 'Dança', emoji: '💃' },
-            { name: 'Música', emoji: '🎵' },
-            { name: 'Mídia', emoji: '📺' },
-            { name: 'Escrita', emoji: '✍️' },
-            { name: 'Finanças', emoji: '💰' }
-        ];
-
-        const channels = [
-            'Jornal', 'Instagram', 'TikTok', 'Boca-a-boca', 'YouTube',
-            'Site na Web', 'WhatsApp', 'Panfletos', 'Grupos de Vendas'
-        ];
-
-        const employees = [
-            { name: 'Vendedor', desc: 'Especialista em vendas' },
-            { name: 'Marketing', desc: 'Criativo, conhecedor de tendências' },
-            { name: 'Design', desc: 'Designer criativo' },
-            { name: 'Assistente', desc: 'Organizado e eficiente' },
-            { name: 'Agente Publicitário', desc: 'Conectado, networking' },
-            { name: 'Escritor', desc: 'Produtor de conteúdo' }
-        ];
-
-        const growthOptions = [
-            'Fazer mais publicações nas redes sociais',
-            'Dar descontos para chamar mais clientes',
-            'Expandir equipe - contratar mais funcionários',
-            'Abrir filiais',
-            'Criar mais produtos'
-        ];
-
-        const ayoDepoisImage = 'https://raw.githubusercontent.com/Araujotete/Raizes2/main/Ay%C3%B4.png';
-        const malikDepoisImage = 'https://raw.githubusercontent.com/Araujotete/Raizes2/main/Malik.png';
-
-        let playerData = {
-            name: '',
-            character: '',
-            characterImage: '',
-            score: 0,
-            mentorsVisited: 0,
-            businesses: [],
-            businessName: '',
-            businessDesc: '',
-            channels: [],
-            employee: '',
-            clientPitch: '',
-            growth: [],
-            partnership: '',
-            ethics: '',
-            isHonest: true
-        };
-
-        let currentPhase = 0;
-        let videoEnded = false;
-
-        function initGame() {
-            renderCharacters();
-            renderMentors();
-            renderBusinessTypes();
-            renderChannels();
-            renderEmployees();
-            renderGrowthOptions();
-            renderPartnershipOptions();
-            renderEthicsOptions();
-            renderFinalOptions();
-        }
-
-        function renderCharacters() {
-            const grid = document.getElementById('characterGrid');
-            grid.innerHTML = characters.map((char) => 
-                `<div class="character-option">
-                    <img src="${char.image}" alt="${char.name}" onclick="openImageModal('${char.name}', '${char.image}')">
-                    <div class="character-name">${char.name}</div>
-                </div>`
-            ).join('');
-        }
-
-        function openImageModal(name, image) {
-            document.getElementById('characterNameModal').textContent = name;
-            document.getElementById('characterImageModal').src = image;
-            document.getElementById('modalViewImage').classList.add('active');
-            playerData.tempCharacter = name;
-            playerData.tempImage = image;
-        }
-
-        function closeImageModal() {
-            document.getElementById('modalViewImage').classList.remove('active');
-        }
-
-        function selectCharacterFromModal() {
-            playerData.character = playerData.tempCharacter;
-            playerData.characterImage = playerData.tempImage;
-            closeImageModal();
-            alert('Personagem ' + playerData.character + ' selecionado!');
-        }
-
-        function startGame() {
-            const name = document.getElementById('playerName').value;
-            if (!name || !playerData.character) {
-                alert('Por favor, preencha seu nome e escolha um personagem!');
-                return;
-            }
-            playerData.name = name;
-            playerData.score = 100;
-            showScreen('screen-abertura');
-        }
-
-        function renderMentors() {
-            const container = document.getElementById('mentorsContainer');
-            container.innerHTML = mentors.map((mentor, idx) => 
-                `<div class="mentor-card" onclick="visitMentor(${idx}, this)">
-                    <img src="${mentor.image}" alt="${mentor.name}" class="mentor-image">
-                    <div class="mentor-content">
-                        <strong>${mentor.name}</strong>
-                        <p>${mentor.text}</p>
-                        <small style="color: #999;">Clique para ouvir +4 pontos</small>
-                    </div>
-                </div>`
-            ).join('');
-        }
-
-        function visitMentor(idx, element) {
-            if (element.classList.contains('visited')) return;
-            element.classList.add('visited');
-            playerData.mentorsVisited++;
-            playerData.score += 4;
-            document.getElementById('mentorCount').textContent = playerData.mentorsVisited;
-            document.getElementById('mentorsSelected').style.display = 'block';
-            
-            if (playerData.mentorsVisited >= 3) {
-                document.getElementById('btnPhase2').disabled = false;
-            }
-        }
-
-        function renderBusinessTypes() {
-            const container = document.getElementById('businessTypes');
-            container.innerHTML = businessTypes.map((type, idx) => 
-                `<div class="checkbox-item">
-                    <input type="checkbox" data-business="${type.name}" onchange="updateBusinesses()"> 
-                    <span class="business-emoji">${type.emoji}</span> ${type.name}
-                </div>`
-            ).join('');
-        }
-
-        function updateBusinesses() {
-            const checks = document.querySelectorAll('#businessTypes input:checked');
-            if (checks.length > 3) {
-                checks[checks.length - 1].checked = false;
-                return;
-            }
-            playerData.businesses = Array.from(checks).map(c => c.getAttribute('data-business'));
-        }
-
-        function renderChannels() {
-            const container = document.getElementById('channels');
-            container.innerHTML = channels.map(channel => 
-                `<div class="checkbox-item">
-                    <input type="checkbox" onchange="updateChannels()"> ${channel}
-                </div>`
-            ).join('');
-        }
-
-        function updateChannels() {
-            const checks = document.querySelectorAll('#channels input:checked');
-            if (checks.length > 3) {
-                checks[checks.length - 1].checked = false;
-            }
-            playerData.channels = Array.from(checks).map(c => c.parentElement.textContent.trim());
-        }
-
-        function renderEmployees() {
-            const container = document.getElementById('employeeOptions');
-            container.innerHTML = employees.map(emp => 
-                `<button class="option-btn" onclick="selectEmployee('${emp.name}', this)">
-                    <strong>${emp.name}</strong><br>
-                    <small>${emp.desc}</small>
-                </button>`
-            ).join('');
-        }
-
-        function selectEmployee(emp, element) {
-            document.querySelectorAll('#employeeOptions .option-btn').forEach(e => e.classList.remove('selected'));
-            element.classList.add('selected');
-            playerData.employee = emp;
-        }
-
-        function renderGrowthOptions() {
-            const container = document.getElementById('growthOptions');
-            container.innerHTML = growthOptions.map(option => 
-                `<div class="checkbox-item">
-                    <input type="checkbox" onchange="updateGrowth()"> ${option}
-                </div>`
-            ).join('');
-        }
-
-        function updateGrowth() {
-            const checks = document.querySelectorAll('#growthOptions input:checked');
-            if (checks.length > 2) {
-                checks[checks.length - 1].checked = false;
-            }
-            playerData.growth = Array.from(checks).map(c => c.parentElement.textContent.trim());
-        }
-
-        function renderPartnershipOptions() {
-            const container = document.getElementById('partnershipOptions');
-            container.innerHTML = [
-                'Teste Prático - Cada um fica uma semana como gerente',
-                'Divisão no Mercado de Ações - 30% cada, 10% para investidores',
-                'Divisão com Caridade - 30% cada, 10% para caridade'
-            ].map(opt => 
-                `<button class="option-btn" onclick="selectPartnership('${opt}', this)">${opt}</button>`
-            ).join('');
-        }
-
-        function selectPartnership(opt, element) {
-            document.querySelectorAll('#partnershipOptions .option-btn').forEach(e => e.classList.remove('selected'));
-            element.classList.add('selected');
-            playerData.partnership = opt;
-        }
-
-        function renderEthicsOptions() {
-            const container = document.getElementById('ethicsOptions');
-            container.innerHTML = [
-                { text: 'R$30 mil para cada', value: 'honest' },
-                { text: 'R$60 mil no negócio, R$30 mil divididos', value: 'strategic' },
-                { text: 'Dizer que receberam R$60 mil, ficar com R$50 mil', value: 'dishonest' }
-            ].map(opt => 
-                `<button class="option-btn" onclick="selectEthics('${opt.value}', this)">${opt.text}</button>`
-            ).join('');
-        }
-
-        function selectEthics(opt, element) {
-            document.querySelectorAll('#ethicsOptions .option-btn').forEach(e => e.classList.remove('selected'));
-            element.classList.add('selected');
-            playerData.ethics = opt;
-            
-            if (opt === 'dishonest') {
-                playerData.isHonest = false;
-                playerData.score -= 80;
-            } else {
-                playerData.isHonest = true;
-                playerData.score += 20;
-            }
-        }
-
-        function renderFinalOptions() {
-            const optionsHonest = document.getElementById('finalOptions');
-            const optionsDesonesto = document.getElementById('finalOptionsDesonesto');
-            
-            const honestOpts = [
-                'Foi difícil, mas consegui',
-                'Os fins justificam os meios',
-                'Foi muito fácil'
-            ];
-
-            const dishonestOpts = [
-                'Foi difícil, mas consegui',
-                'Os fins justificam os meios',
-                'Foi muito fácil',
-                'Eu vou voltar, e quando isso acontecer, Malik e Ayô pagarão'
-            ];
-
-            optionsHonest.innerHTML = honestOpts.map(opt => 
-                `<button class="option-btn" onclick="endGame('${opt}', true)">${opt}</button>`
-            ).join('');
-
-            optionsDesonesto.innerHTML = dishonestOpts.map(opt => 
-                `<button class="option-btn" onclick="endGame('${opt}', false)">${opt}</button>`
-            ).join('');
-        }
-
-        function renderFinalCharacters() {
-            document.getElementById('finalCharactersHonesto').innerHTML = `
-                <img src="${ayoDepoisImage}" class="final-character-img ayo-malik" alt="Ayô">
-                <img src="${playerData.characterImage}" class="final-character-img ayo-malik" alt="${playerData.character}">
-                <img src="${malikDepoisImage}" class="final-character-img ayo-malik" alt="Malik">
-            `;
-
-            document.getElementById('finalCharactersDishonest').innerHTML = `
-                <div style="display: flex; gap: 20px; align-items: flex-start;">
-                    <img src="${ayoDepoisImage}" class="final-character-img ayo-malik" alt="Ayô">
-                    <img src="${malikDepoisImage}" class="final-character-img ayo-malik" alt="Malik">
-                </div>
-                <img src="${playerData.characterImage}" class="final-character-img player-character" alt="${playerData.character}">
-            `;
-        }
-
-        function setupVideoListener() {
-            const iframe = document.getElementById('policeVideo');
-            let checkCount = 0;
-            
-            const checkVideoProgress = setInterval(() => {
-                checkCount++;
-                if (checkCount > 120) {
-                    clearInterval(checkVideoProgress);
-                    document.getElementById('continueAfterVideo').style.display = 'block';
-                }
-            }, 500);
-        }
-
-        function goToPhase(phase) {
-            let screenId = '';
-            currentPhase = phase;
-            
-            if (phase === 1) {
-                screenId = 'screen-fase1';
-                playerData.score += 100;
-            } else if (phase === 2) {
-                screenId = 'screen-fase2';
-                playerData.score += 100;
-            } else if (phase === 3) {
-                screenId = 'screen-fase3';
-                playerData.score += 100;
-            } else if (phase === 4) {
-                screenId = 'screen-fase4';
-                playerData.score += 100;
-            } else if (phase === 5) {
-                screenId = 'screen-fase5';
-                playerData.score += 100;
-                document.getElementById('playerImagePhase5a').src = playerData.characterImage;
-            } else if (phase === 6) {
-                screenId = 'screen-fase6';
-                playerData.score += 100;
-            } else if (phase === 7) {
-                screenId = 'screen-fase7';
-                playerData.score += 100;
-            } else if (phase === 8) {
-                screenId = 'screen-fase8';
-                playerData.score += 100;
-                document.getElementById('playerImagePhase8a').src = playerData.characterImage;
-                document.getElementById('playerImagePhase8b').src = playerData.characterImage;
-            } else if (phase === 9) {
-                screenId = 'screen-fase9';
-            } else if (phase === 10) {
-                if (!playerData.isHonest) {
-                    screenId = 'screen-fase10-desonesto';
-                    showScreen(screenId);
-                    setupVideoListener();
-                    return;
-                }
-                
-                renderFinalCharacters();
-                screenId = 'screen-fase10-honesto';
-                document.getElementById('finalScore').textContent = playerData.score + ' pontos';
-            }
-            
-            showScreen(screenId);
-        }
-
-        function showFinalScreen() {
-            document.getElementById('policeVideoContainer').style.display = 'none';
-            document.getElementById('arrestMessageContainer').style.display = 'block';
-            document.getElementById('arrestMessage').style.display = 'block';
-            document.getElementById('consequenceMessage').style.display = 'block';
-            document.getElementById('finalCharactersDishonest').style.display = 'flex';
-            document.getElementById('finalOptionsContainer').style.display = 'block';
-            document.getElementById('finalScoreContainer').style.display = 'block';
-            document.getElementById('playAgainContainer').style.display = 'flex';
-            
-            if (!document.getElementById('finalCharactersDishonest').innerHTML) {
-                renderFinalCharacters();
-            }
-            
-            playerData.score = Math.min(playerData.score + 20, 400);
-            document.getElementById('finalScoreDesonesto').textContent = playerData.score + ' pontos';
-            
-            window.scrollTo(0, 0);
-        }
-
-        function showScreen(screenId) {
-            document.querySelectorAll('.screen').forEach(screen => screen.classList.remove('active'));
-            document.getElementById(screenId).classList.add('active');
-            window.scrollTo(0, 0);
-        }
-
-        function endGame(answer, isHonest) {
-            alert(`Fim de Jogo!\n\nSua resposta: "${answer}"\n\nPontuação Final: ${playerData.score} pontos\n\nObrigado por jogar!`);
-            location.reload();
-        }
-
-        function validatePhase1() {
-            if (playerData.mentorsVisited < 3) {
-                alert('Você precisa visitar pelo menos 3 mentores antes de continuar!');
-                return;
-            }
-            goToPhase(2);
-        }
-
-        function validatePhase2() {
-            const businessName = document.getElementById('businessName').value.trim();
-            if (playerData.businesses.length < 1) {
-                alert('Você precisa escolher pelo menos 1 ramo de negócio!');
-                return;
-            }
-            if (!businessName) {
-                alert('Você precisa dar um nome ao seu empreendimento!');
-                return;
-            }
-            playerData.businessName = businessName;
-            goToPhase(3);
-        }
-
-        function validatePhase3() {
-            const businessDesc = document.getElementById('businessDesc').value.trim();
-            if (!businessDesc) {
-                alert('Você precisa descrever seu negócio!');
-                return;
-            }
-            if (playerData.channels.length < 1) {
-                alert('Você precisa escolher pelo menos 1 canal de divulgação!');
-                return;
-            }
-            playerData.businessDesc = businessDesc;
-            goToPhase(4);
-        }
-
-        function validatePhase4() {
-            if (!playerData.employee) {
-                alert('Você precisa escolher um funcionário para contratar!');
-                return;
-            }
-            goToPhase(5);
-        }
-
-        function validatePhase5() {
-            const clientPitch = document.getElementById('clientPitch').value.trim();
-            if (!clientPitch) {
-                alert('Você precisa criar um pitch para seu cliente!');
-                return;
-            }
-            playerData.clientPitch = clientPitch;
-            goToPhase(6);
-        }
-
-        function validatePhase6() {
-            if (playerData.growth.length < 1) {
-                alert('Você precisa escolher pelo menos 1 estratégia de crescimento!');
-                return;
-            }
-            goToPhase(7);
-        }
-
-        function validatePhase7() {
-            if (!playerData.partnership) {
-                alert('Você precisa escolher uma solução para o conflito entre sócios!');
-                return;
-            }
-            goToPhase(8);
-        }
-
-        function validatePhase9() {
-            if (!playerData.ethics) {
-                alert('Você precisa fazer uma escolha sobre como dividir o dinheiro!');
-                return;
-            }
-            goToPhase(10);
-        }
-
-        document.addEventListener('DOMContentLoaded', () => {
-            const desc = document.getElementById('businessDesc');
-            if (desc) {
-                desc.addEventListener('input', () => {
-                    document.getElementById('charCount').textContent = desc.value.length + '/150';
-                });
-            }
-            initGame();
+        <img src="${playerData.characterImage}" class="final-character-img player-character" alt="${playerData.character}" onerror="this.style.display='none'">
+    `;
+}
+
+function setupVideoListener() {
+    const iframe = document.querySelector('iframe');
+    if (iframe) {
+        iframe.addEventListener('load', function() {
+            setTimeout(function() {
+                document.getElementById('continueAfterVideo').style.display = 'block';
+            }, 30000); // Mostra o botão após 30 segundos
         });
-    </script>
-</body>
-</html>
+    }
+}
+
+function goToPhase(phase) {
+    let screenId = '';
+    currentPhase = phase;
+    
+    switch(phase) {
+        case 1:
+            screenId = 'screen-fase1';
+            playerData.score += 100;
+            break;
+        case 2:
+            screenId = 'screen-fase2';
+            playerData.score += 100;
+            break;
+        case 3:
+            screenId = 'screen-fase3';
+            playerData.score += 100;
+            break;
+        case 4:
+            screenId = 'screen-fase4';
+            playerData.score += 100;
+            break;
+        case 5:
+            screenId = 'screen-fase5';
+            playerData.score += 100;
+            document.getElementById('playerImagePhase5a').src = playerData.characterImage;
+            break;
+        case 6:
+            screenId = 'screen-fase6';
+            playerData.score += 100;
+            break;
+        case 7:
+            screenId = 'screen-fase7';
+            playerData.score += 100;
+            break;
+        case 8:
+            screenId = 'screen-fase8';
+            playerData.score += 100;
+            document.getElementById('playerImagePhase8a').src = playerData.characterImage;
+            document.getElementById('playerImagePhase8b').src = playerData.characterImage;
+            break;
+        case 9:
+            screenId = 'screen-fase9';
+            break;
+        case 10:
+            if (!playerData.isHonest) {
+                screenId = 'screen-fase10-desonesto';
+                showScreen(screenId);
+                setupVideoListener();
+                return;
+            }
+            renderFinalCharacters();
+            screenId = 'screen-fase10-honesto';
+            document.getElementById('finalScore').textContent = playerData.score + ' pontos';
+            break;
+    }
+    
+    showScreen(screenId);
+}
+
+function showScreen(screenId) {
+    document.querySelectorAll('.screen').forEach(screen => screen.classList.remove('active'));
+    document.getElementById(screenId).classList.add('active');
+    window.scrollTo(0, 0);
+}
+
+function endGame(answer, isHonest) {
+    alert(`Fim de Jogo!\n\nSua resposta: "${answer}"\n\nPontuação Final: ${playerData.score} pontos\n\nObrigado por jogar!`);
+    location.reload();
+}
+
+// Funções de validação para cada fase
+function validatePhase1() {
+    if (playerData.mentorsVisited < 3) {
+        alert('Você precisa visitar pelo menos 3 mentores antes de continuar!');
+        return;
+    }
+    goToPhase(2);
+}
+
+function validatePhase2() {
+    const businessName = document.getElementById('businessName').value.trim();
+    if (playerData.businesses.length < 1) {
+        alert('Você precisa escolher pelo menos 1 ramo de negócio!');
+        return;
+    }
+    if (!businessName) {
+        alert('Você precisa dar um nome ao seu empreendimento!');
+        return;
+    }
+    playerData.businessName = businessName;
+    goToPhase(3);
+}
+
+function validatePhase3() {
+    const businessDesc = document.getElementById('businessDesc').value.trim();
+    if (!businessDesc) {
+        alert('Você precisa descrever seu negócio!');
+        return;
+    }
+    if (playerData.channels.length < 1) {
+        alert('Você precisa escolher pelo menos 1 canal de divulgação!');
+        return;
+    }
+    playerData.businessDesc = businessDesc;
+    goToPhase(4);
+}
+
+function validatePhase4() {
+    if (!playerData.employee) {
+        alert('Você precisa escolher um funcionário para contratar!');
+        return;
+    }
+    goToPhase(5);
+}
+
+function validatePhase5() {
+    const clientPitch = document.getElementById('clientPitch').value.trim();
+    if (!clientPitch) {
+        alert('Você precisa criar um pitch para seu cliente!');
+        return;
+    }
+    playerData.clientPitch = clientPitch;
+    goToPhase(6);
+}
+
+function validatePhase6() {
+    if (playerData.growth.length < 1) {
+        alert('Você precisa escolher pelo menos 1 estratégia de crescimento!');
+        return;
+    }
+    goToPhase(7);
+}
+
+function validatePhase7() {
+    if (!playerData.partnership) {
+        alert('Você precisa escolher uma solução para o conflito entre sócios!');
+        return;
+    }
+    goToPhase(8);
+}
+
+function validatePhase9() {
+    if (!playerData.ethics) {
+        alert('Você precisa fazer uma escolha sobre como dividir o dinheiro!');
+        return;
+    }
+    goToPhase(10);
+}
+
+// Inicialização do jogo
+document.addEventListener('DOMContentLoaded', () => {
+    const desc = document.getElementById('businessDesc');
+    if (desc) {
+        desc.addEventListener('input', () => {
+            document.getElementById('charCount').textContent = desc.value.length + '/150';
+        });
+    }
+    initGame();
+});
